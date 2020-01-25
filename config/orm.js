@@ -38,6 +38,7 @@ var orm = {
         var dbQuery = "INSERT INTO " + table + " (" + cols.toString() + ") " + "VALUES (" + createQmarks(vals.length) + ") ";
 
         console.log(dbQuery)
+        console.log("Values", vals);
         connection.query(dbQuery, vals, function (err, res) {
             if (err) {
                 throw err;
@@ -57,7 +58,7 @@ var orm = {
 
         console.log(dbQuery)
 
-        connection.query(dbQuery, vals, function (err, res) {
+        connection.query(dbQuery, function (err, res) {
             if (err) {
                 throw err;
             }
